@@ -1,6 +1,6 @@
-package LinkedList;
+import LinkedList.*;
 
-public class BasicListTest {
+public class BasicLinkedListTest {
     public static void main(String[] args) {
         LinkedList list = new LinkedList(1);
         list.add(2);

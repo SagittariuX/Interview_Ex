@@ -1,7 +1,7 @@
 package LinkedList;
 
 public class LinkedList {
-    Node head;
+    public Node head;
 
     public LinkedList(){
         this.head = null;
@@ -30,7 +30,8 @@ public class LinkedList {
         }
 
         while(tracker != null){
-            System.out.print( tracker.data+' ');
+            System.out.print( tracker.data+" ");
+            tracker = tracker.next;
         }
         System.out.println();
     }
