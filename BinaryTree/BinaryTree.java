@@ -1,3 +1,4 @@
+package BinaryTree;
 import java.util.*;
 
 public class BinaryTree{
@@ -58,6 +59,38 @@ public class BinaryTree{
         }
     }
 
-    
+    public void prettyPrint(){
+        int maxSize = treeSpaceWidth();
+        if (maxSize == 0){
+            System.out.println("No Tree");
+        }
+        List<Integer> places = new ArrayList<Integer>();
+        int elements = 1;
+
+
+
+
+    }
+
+    private ArrayList<Integer> fillList(ArrayList<Integer> list){
+
+
+        return list;
+    }
+
+    private int treeSpaceWidth(){
+        if(this.root == null){
+            return 0;
+        }
+        else{
+            return Math.max(treeSpaceWidth(this.root.left, 1), treeSpaceWidth(this.root.right,1));
+        }
+    }
+    private int treeSpaceWidth(Node n, int width){
+        if(n == null){
+            return width;
+        }
+        return Math.max(treeSpaceWidth(n.left, width*2+1), treeSpaceWidth(n.right,width*2+1));
+    }
 
 }
