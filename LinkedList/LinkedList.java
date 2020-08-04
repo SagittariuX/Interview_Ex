@@ -12,15 +12,15 @@ public class LinkedList {
     }
     
     public void add(int data){
-        Node tracker = this.head;
-        if(tracker == null){
+        Node n = this.head;
+        if(n == null){
             head = new Node(data);
         }
         
-        while (tracker.next != null){
-            tracker = tracker.next;
+        while (n.next != null){
+            n = n.next;
         }
-        tracker.next = new Node(data);
+        n.next = new Node(data);
     }
 
     public void push(int data){
@@ -61,6 +61,8 @@ public class LinkedList {
             n.data = n.next.data;
             n.next = n.next.next;
         }
+
+        n=null;
         return;
     }
 
@@ -95,35 +97,52 @@ public class LinkedList {
     }
 
     private void removeTail(){
-        Node n = this.head;
+        if (this.head.next == null){//if head is also tail
+            this.head = null;
+            return;
+        }
+        
+        Node n = this.head.next;
+        Node prev = this.head;
+
+        while(n.next != null){
+            n = n.next;
+            prev = prev.next;
+        }
+        prev.next = null;
+        return;
     }
 
     public void removeDuplicates(){
         HashSet<Integer> set = new HashSet<Integer>();
         Node n = this.head;
 
-        while(n != null){
+        while(n.next != null){
             if(set.contains(n.data)){
-                this.remove(n);    
+                remove(n);
             }else{
                 set.add(n.data);
+                n = n.next;
             }
-            n = n.next;
         }
+        if(set.contains(n.data)){//tail is special
+            remove(n);
+        }
+        return;
 
     }
 
 
     public void print(){
-        Node tracker = this.head;
-        if(tracker == null){
+        Node n = this.head;
+        if(n == null){
             System.out.println("Empty List");
             return;
         }
 
-        while(tracker != null){
-            System.out.print( tracker.data+" ");
-            tracker = tracker.next;
+        while(n != null){
+            System.out.print( n.data+" ");
+            n = n.next;
         }
         System.out.println();
     }
