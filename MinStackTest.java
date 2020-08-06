@@ -11,6 +11,8 @@ public class MinStackTest {
 
 
         stack.pop();
+        stack.pop();
+        stack.pop();
         stack.printBoth();
     }
 }

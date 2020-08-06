@@ -21,15 +21,9 @@ public class Stack<T> {
     }
 
     public void push(T data){
-        if(this.top == null){
-            this.top = new Node<T>(data);
-            return;
-        }
-        Node<T> n = this.top;
-        while(n.next != null){
-            n = n.next;
-        }
-        n.next = new Node<T>(data);
+        Node<T> n = new Node<T>(data);
+        n.next = this.top;
+        this.top = n;
         return;
     }
     
@@ -57,6 +51,10 @@ public class Stack<T> {
         }
         System.out.println();
         return;
+    }
+
+    public boolean isEmpty(){
+        return this.top == null;
     }
 
 
