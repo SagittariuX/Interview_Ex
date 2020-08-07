@@ -6,7 +6,7 @@ public class BasicQueueTest {
 
 
         //testing normal queue
-        Queue<Integer> queue = new Queue<Integer>(1);
+        Queue<Integer> queue = new Queue<Integer>();
         queue.add(2);
         queue.add(3);
         queue.print();

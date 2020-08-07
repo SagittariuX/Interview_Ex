@@ -2,7 +2,7 @@ package Queue;
 
 public class Queue<T> {
 
-    private static class Node<T> {
+    public static class Node<T> {
         private T data;
         private Node<T> next;
 
@@ -10,6 +10,11 @@ public class Queue<T> {
             this.data = data;
             this.next = null;
         }
+
+        public T returnData(){
+            return this.data;
+        }
+
     }
 
     private Node<T> top;
@@ -32,13 +37,26 @@ public class Queue<T> {
     }
 
     public void add(T data){
+        Node<T> node = new Node<T>(data);
         if(this.bottom != null){
-            this.bottom.next = new Node<T>(data);
+            this.bottom.next = node;
         }
-        this.bottom = this.bottom.next;
+        this.bottom = node;
         if(this.top == null){
             this.top = this.bottom;
         }
+        return;
+    }
+
+    public void add(Node<T> node){
+        if(this.bottom != null){
+            this.bottom.next = node;
+        }
+        this.bottom = node;
+        if(this.top == null){
+            this.top = this.bottom;
+        }
+        return;
     }
     
     public T remove(){
@@ -46,6 +64,18 @@ public class Queue<T> {
             return null;
         }
         T value = this.top.data;
+        this.top = this.top.next;
+        if(this.top == null){
+            this.bottom = null;
+        }
+        return value;
+    }
+
+    public Node<T> removeNode(){
+        if(top == null){
+            return null;
+        }
+        Node<T> value = this.top;
         this.top = this.top.next;
         if(this.top == null){
             this.bottom = null;
