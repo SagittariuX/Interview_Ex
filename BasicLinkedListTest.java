@@ -10,14 +10,15 @@ public class BasicLinkedListTest {
         list.add(4);
         list.add(5);
     
-        list.print();
+        //list.print();
 
         list.add(2);
         list.add(6);
         list.add(6);
         list.add(6);
 
-        list.removeDuplicates();
+        //list.removeDuplicates();
+        list.reverse();
         list.print();
 
 

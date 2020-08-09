@@ -129,7 +129,19 @@ public class LinkedList {
             remove(n);
         }
         return;
+    }
 
+    public void reverse(){
+        Node n = this.head;
+        Node prev = null;
+        while(n != null){
+            Node current = n;
+            n = n.next;    
+
+            current.next = prev;
+            prev = current;
+            this.head = current;
+        }
     }
 
 

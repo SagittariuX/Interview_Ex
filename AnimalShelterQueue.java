@@ -74,6 +74,7 @@ public class AnimalShelterQueue {
         System.out.println(dequeueAny());
         System.out.println(dequeueDog());
         System.out.println(dequeueAny());
+        System.out.println(dequeueCat());
     }
 
 }
