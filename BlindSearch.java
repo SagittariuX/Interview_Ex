@@ -10,27 +10,32 @@ public class BlindSearch {
     */
 
     private int blindSearch(Listy list, int target){
-        int i = 0, j = 0;
-
-        if(list.elementAt(i) == -1){
+        if(list.elementAt(0) == -1){
             return -1; //empty list
         }
 
-        while(list.elementAt(i) != -1 || list.elementAt(j) != -1){
-            if(list.elementAt(i) == target){//found item with slow tracker
-                return i;
-            }
-            if(list.elementAt(j) == target){//found item with fast tracker
-                return j;
-            }
+        int size = 1;
+        while(list.elementAt(size) != -1 && list.elementAt(size) < target){
+            size *= 2;
+        }
 
-            //since target is still larger than where fast tracker is
-            //we can speed up the slow tracker
-            if(list.elemntAt(j) < target && list.elementAt(j) != -1){
-                i = j;
+        return binarySearch(list, target, size/2, size);
+    }
+
+
+    private int binarySearch(Listy list, int target, int low, int high){
+        int mid;
+        while (low <= high){
+            mid = (low + high)/2;
+            if(list.elementAt(mid) >  target || list.elementAt(mid) == -1){ //look left
+                high = mid - 1;
             }
-            i += 1;
-            j += 2;
+            else if(list.elementAt(mid) < target){
+                low = mid + 1;
+            }
+            else{
+                return mid;
+            }
         }
 
         return -1;
