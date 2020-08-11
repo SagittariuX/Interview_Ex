@@ -1,10 +1,8 @@
 
 # Prompt: https://leetcode.com/problems/jump-game/
 
-paths1 = [2,3,1,1,4]
-paths2 = [3,2,1,0,4]
-paths3 = [3,1,1,0,2,4]
 
+# Time O(n) Space O(1)
 def jump_game(paths):
     if(len(paths) == 1 or len(paths) == 0):
         return True
@@ -19,6 +17,10 @@ def jump_game(paths):
         steps -= 1
     
     return True
+
+paths1 = [2,3,1,1,4]
+paths2 = [3,2,1,0,4]
+paths3 = [3,1,1,0,2,4]
 
 print(jump_game(paths1))
 print(jump_game(paths2))
