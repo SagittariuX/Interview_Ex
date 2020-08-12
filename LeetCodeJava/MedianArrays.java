@@ -28,6 +28,7 @@ public class MedianArrays {
 
     private static int[] binarySearch(int[] list, int low, int high){
 
+        return list;
     }
 
 }

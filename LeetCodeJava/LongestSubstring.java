@@ -15,8 +15,7 @@ public class LongestSubstring {
         System.out.println(maxSubstring(str1));
         System.out.println(maxSubstring(str2));
         System.out.println(maxSubstring(str3));
-
-    }
+    }   
     //Time O(n) Space O(n)
     private static int maxSubstring(String s){
         if(s.isEmpty()) return 0;
