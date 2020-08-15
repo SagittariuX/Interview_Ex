@@ -35,11 +35,18 @@ class Queue:
         if self.head == self.tail:
             self.head = None
             self.tail = None
+            return
 
         self.head = self.head.next
+
+    def peek(self):
+        return repr(self.head)
     
     def to_string(self):
         return ''.join(iter(self))
+
+    def is_empty(self):
+        return self.head == None
 
 
 class Node:
