@@ -105,7 +105,7 @@ class DoubleLinkedList:
                 return False
         
         temp = n.next
-        if temp == None:#adding after tail just do normal add
+        if temp == None:#adding after tail
             self.add(node)
             return True
         
