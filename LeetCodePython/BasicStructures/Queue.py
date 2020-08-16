@@ -28,16 +28,17 @@ class Queue:
         self.tail.next = node
         self.tail = node
     
-    def remove(self):
+    def pop(self):
         if self.head == None:
-            return
+            return None
         
         if self.head == self.tail:
             self.head = None
             self.tail = None
-            return
-
+            return None
+        value = repr(self.head)
         self.head = self.head.next
+        return value
 
     def peek(self):
         return repr(self.head)

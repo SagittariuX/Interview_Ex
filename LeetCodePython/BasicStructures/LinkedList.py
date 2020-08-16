@@ -91,7 +91,7 @@ class DoubleLinkedList:
         
         return n
 
-    def insertAfter(self, target, node):
+    def insert_after(self, target, node):
         if not isinstance(node, Node):
             node = Node(node)
 
@@ -114,9 +114,6 @@ class DoubleLinkedList:
         node.next = temp
         temp.prev = node
         return True
-
-
-        
     
     def to_string(self):
         return ''.join(iter(self))
