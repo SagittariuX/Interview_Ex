@@ -3,37 +3,29 @@ from BasicStructures.Queue import *
 import math
 #Prompt: turn a string into a palindrome return None on failure
 
-
+# Time O(n) Space O(n)
 def stringToPalindrome(string):
     if(len(string) == 0): return None
     if(len(string) == 1): return string
 
     middle = math.floor(len(string)/2)-1
-    outlier = None
-    queue = Queue()
+    myset = set() #return from hashset is O(1)
     palindrome = DoubleLinkedList()
 
     for x in string:
         #lets check if x matches
-        if outlier == x:
+        if x in myset:
             palindrome.add(x)
             palindrome.addFront(x)
-            outlier = queue.pop()
-        elif queue.peek() == x:
-            palindrome.add(x)
-            palindrome.addFront(x)
-            queue.pop()
+            myset.remove(x)
         #not a match
-        elif outlier == None:
-            outlier = x
         else :
-            queue.add(x)
+            myset.add(x)
 
-    if not queue.is_empty():
+    if len(myset) == 1:
+        palindrome.insert_after(middle, myset.pop())
+    elif len(myset) > 0:
         return None
-    
-    if outlier != None:
-        palindrome.insert_after(middle, outlier)
     
 
     return palindrome.to_string()
@@ -41,5 +33,6 @@ def stringToPalindrome(string):
 
 string = 'rraacce'
 string ='aabb'
+string ='ababb'
 print(stringToPalindrome(string))
 
