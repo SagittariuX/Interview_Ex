@@ -28,6 +28,7 @@ def jump_game(paths):
 # Prompt: https://leetcode.com/problems/jump-game-ii/
 def jump_game_2(paths):
     if len(paths) == 0: return 0
+    if len(paths) == 1: return 1
 
     jump = 0 #track total number of jumps
     current = 0 #track current location in paths
