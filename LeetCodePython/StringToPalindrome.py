@@ -34,5 +34,6 @@ def stringToPalindrome(string):
 string = 'rraacce'
 string ='aabb'
 string ='ababb'
+string = 'c'
 print(stringToPalindrome(string))
 
