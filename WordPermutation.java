@@ -1,11 +1,8 @@
 public class WordPermutation {
     public static void main(String[] args) {
         
-        
         String a = "abcdbbbbbbbbb";
         String b = "abcdbbbbbbbb";
-
-
         System.out.println(isPermutation(a, b));
 
     }
