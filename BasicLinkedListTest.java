@@ -18,7 +18,8 @@ public class BasicLinkedListTest {
         list.add(6);
 
         //list.removeDuplicates();
-        list.reverse();
+        //list.reverse();
+        list.removeMiddle();
         list.print();
 
 

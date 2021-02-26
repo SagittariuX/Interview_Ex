@@ -144,6 +144,27 @@ public class LinkedList {
         }
     }
 
+    //more middleish then middle
+    //if it has even number of element will remove the node closer to the tail
+    public void removeMiddle(){
+        Node tracker = this.head;
+        Node runner = this.head;
+
+        while(runner.next != null){
+            tracker = tracker.next;
+
+            runner = runner.next;
+            
+            if(runner.next != null){
+                runner = runner.next;
+            }else{
+                break;
+            }
+        }
+
+        remove(tracker);
+    }
+
 
     public void print(){
         Node n = this.head;

@@ -9,16 +9,7 @@ public class BasicBinaryTreeTest {
         tree.root.left.left = new Node(4);
         tree.root.left.right = new Node(5);
 
-        // tree.breadthFirstDisplay();
-        tree.prettyPrint();
-
-        tree.add(7);
-        tree.add(6);
-        tree.add(15);
-
-        //  tree.breadthFirstDisplay();
-        tree.prettyPrint();
-        System.out.println(7/2);
+        tree.breadthFirstDisplay();
 
     }
 }
