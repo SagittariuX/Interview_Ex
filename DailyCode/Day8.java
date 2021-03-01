@@ -17,7 +17,7 @@ public class Day8 {
     }
 
     // a unival subtree is a tree where all node under it have the same value
-    private static int countUnivalSubtree(Node n){
+    private static int countUnivalSubtree(Node<Integer> n){
         
         if (n == null){
             return 0;
@@ -33,7 +33,7 @@ public class Day8 {
         }
     }
 
-    private static boolean isUni(Node n){
+    private static boolean isUni(Node<Integer> n){
         
         if(n == null){
             return true;
@@ -43,7 +43,7 @@ public class Day8 {
         
     }
 
-    private static boolean checkValues(Node n){
+    private static boolean checkValues(Node<Integer> n){
         
         boolean check = true;
 
@@ -55,23 +55,10 @@ public class Day8 {
             check &= n.value == n.right.value;
         }
         
-
         return check;
     }
 
 
 
-}
-
-
-
-class Node<T>{
-    public T value;
-    public Node<T> left = null;
-    public Node<T> right = null;
-
-    public Node (T value){
-        this.value = value;
-    }
 }
 
