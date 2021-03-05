@@ -20,13 +20,6 @@ public class UnivalTree {
         tree.root.right.left.right = new Node(1);
         tree.root.right.right = new Node(0);
 
-        /*
-                        0
-                    1       0
-                          1   0
-                        1   1  
-
-        */
        univalTrees(tree);
     }
 
@@ -46,7 +39,6 @@ public class UnivalTree {
         }
        // System.out.print(n.data);
         if (n.left == null && n.right == null){//reaches a leaf
-            System.out.println(1);
             return (n.data == prevValue) ? true : false;
         }else{
             boolean leftBool = univalTreeHelper(n.left, n.data, count);
