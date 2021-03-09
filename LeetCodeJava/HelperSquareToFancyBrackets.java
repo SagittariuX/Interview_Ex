@@ -1,7 +1,6 @@
 public class HelperSquareToFancyBrackets {
-    public static void main(String[] args) {
-        
-        String s = "[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[1,0],[0,0],[0,0],[0,0],[0,0],[0,0],[1,0],[0,0],[0,0],[0,0],[0,0],[0,1],[0,0],[0,0],[1,0],[0,0],[0,0],[0,1],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,1],[0,0],[0,0],[0,0],[0,0],[1,0],[0,0],[0,0],[0,0],[0,0]]";
+    
+    public String SquareToBraceBrackets (String s){
         char[] arr = s.toCharArray();
         for(int i = 0; i < s.length(); i++){
 
@@ -15,8 +14,7 @@ public class HelperSquareToFancyBrackets {
 
 
         }
-
-        System.out.println(new String (arr));
+        return new String(arr);
 
     }
 }
