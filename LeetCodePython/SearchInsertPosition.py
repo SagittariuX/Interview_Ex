@@ -22,4 +22,4 @@ def binary_search(nums, target):
     l , r = 0 , len(nums)
 
     while l < r:
-         
+        

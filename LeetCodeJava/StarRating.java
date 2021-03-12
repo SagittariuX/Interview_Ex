@@ -13,8 +13,6 @@ class StarRating{
 
         if (fullStar == 5) return ans;
 
-
-
         if(halfStar > 0.74){
             ans += "full ";
             fullStar++;
